@@ -10,7 +10,7 @@ public class ConvexHull extends LinkedLists
     Panel drawPanel;
     Node head=new Node();
     
-    public static void main()
+    public static void main(String[] args)
     {
         ConvexHull gui = new ConvexHull();
         gui.go();
@@ -227,7 +227,7 @@ class Draw
     void phase1(Node head)
     {
         count1=0;
-        stack1=new Node[head.count];
+        stack1=new Node[head.count+1];
         Node p=head.next;
         if(head.count!=0)
             stack1[count1++]=p;
@@ -240,7 +240,13 @@ class Draw
                 continue;
             else
             {
-                stack1[count1++]=p;
+            	if(count1<0)
+            	{
+            		stack1[0] = p;
+            		count1 = 1;
+            	}	
+            	else
+            	        stack1[count1++]=p;
                 if(count1<2)
                     continue;
                 else
