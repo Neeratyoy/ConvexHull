@@ -10,10 +10,12 @@ class LinkedLists
             return 0;
         Node p=new Node(a,b);
         p.next=head.next;
-        Node q=p.next;
+        if(head.next!=null)
+	        head.next.previous = p;
+        Node q=new Node();
+        q=p.next;
         head.next=p;
         p.previous=head;
-        q.previous=p;
         p=null;
         q=null;
         head.count++;
@@ -227,4 +229,3 @@ class Node
         previous=null;
     }
 } //end of class
-
