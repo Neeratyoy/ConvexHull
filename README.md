@@ -1,4 +1,4 @@
-FEATURES
+README
 =========
 
 An inter-active GUI where mouse clicks plot points on a 2D panel and a convex hull is drawn by the program for the set of points.
